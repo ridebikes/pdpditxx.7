@@ -332,8 +332,8 @@ namespace pdpditxx
             // disable AGPL license messaging
             EventManager.AcknowledgeAgplUsageDisableWarningMessage();
 
-            // using iText 7.1.12 with Affine Transform
-            // https://api.itextpdf.com/iText7/dotnet/7.1.12/classi_text_1_1_kernel_1_1_geom_1_1_affine_transform.html
+            // using iText 7.2.5 with Affine Transform
+            // https://api.itextpdf.com/iText7/dotnet/latest/classi_text_1_1_kernel_1_1_geom_1_1_affine_transform.html
 
             PageSize targetSize = new PageSize(new Rectangle(pageWidth, pageHeight));
 
