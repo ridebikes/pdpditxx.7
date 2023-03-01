@@ -1,0 +1,33 @@
+{
+  "Author": "ridebikes",
+  "Date": "02/28/2023",
+  "Description": "iText7 Code for PDF Processing",
+  "EnableDebug": false,
+  "Notes": "Concatenate a zip of PDF's in order of external index",
+  "ProcessingActions": {
+    "Concatenate": true,
+    "MakeCopies": false,
+    "ScaleAndRotate": false,
+    "SmartSave": false,
+    "Split": false,
+    "TextConvert": false
+  },
+  "Settings": {
+    "Concatenation": {
+      "AddDocBreak": true,
+      "BreakText": "DOC_BREAK"
+    },
+    "MakeCopies": {
+      "NumberOfCopies": 20
+    },
+    "SmartSaving": {
+      "StripComments": false,
+      "FlattenAcroforms": false,
+      "RemovePassword": false
+    },
+    "TargetPageSize": {
+      "PageHeight": 792,
+      "PageWidth": 612
+    }
+  }
+}
