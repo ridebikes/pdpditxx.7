@@ -369,7 +369,6 @@ namespace pdpditxx
                                 double scaleX = targetSize.GetWidth() / rotatedSize.GetWidth();
                                 double scaleY = targetSize.GetHeight() / rotatedSize.GetHeight();
 
-                                //solimar runs scale and shift, so we are going to scale, but to nothing
                                 transformationMatrix = AffineTransform.GetScaleInstance(scaleX, scaleY);
 
                                 if (needsRotated)
