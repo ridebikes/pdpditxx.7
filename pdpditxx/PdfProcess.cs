@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using iText.Kernel.Pdf;
@@ -329,11 +329,13 @@ namespace pdpditxx
 
         public static void ScaleAndRotate(AppSettings.Root appSettings, FileInfo inputFile, FileInfo outputFile, float pageWidth, float pageHeight)
         {
+            DateTime actionStartTime = DateTime.Now;
+
             // disable AGPL license messaging
             EventManager.AcknowledgeAgplUsageDisableWarningMessage();
 
-            // using iText 7.2.5 with Affine Transform
-            // https://api.itextpdf.com/iText7/dotnet/latest/classi_text_1_1_kernel_1_1_geom_1_1_affine_transform.html
+            // using iText 7.1.12 with Affine Transform
+            // https://api.itextpdf.com/iText7/dotnet/7.1.12/classi_text_1_1_kernel_1_1_geom_1_1_affine_transform.html
 
             PageSize targetSize = new PageSize(new Rectangle(pageWidth, pageHeight));
 
@@ -369,6 +371,7 @@ namespace pdpditxx
                                 double scaleX = targetSize.GetWidth() / rotatedSize.GetWidth();
                                 double scaleY = targetSize.GetHeight() / rotatedSize.GetHeight();
 
+                                //solimar runs scale and shift, so we are going to scale, but to nothing
                                 transformationMatrix = AffineTransform.GetScaleInstance(scaleX, scaleY);
 
                                 if (needsRotated)
@@ -400,6 +403,7 @@ namespace pdpditxx
                     }
                 }
             }
+            Console.WriteLine($"iText Scale and Rotate completed in {DateTime.Now.Subtract(actionStartTime):c} for file {inputFile.Name}");
         }
 
         #endregion

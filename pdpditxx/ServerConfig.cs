@@ -1,4 +1,4 @@
-
+﻿
 namespace pdpditxx
 {
     internal class ServerConfig
