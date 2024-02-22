@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 
@@ -41,7 +41,7 @@ namespace pdpditxx
 
         public static List<ErrorMessage> ValidationErrorHandler(List<ErrorMessage> messageList, string message, FileInfo inputFile, string activeModule, string activeStep)
         {
-            Console.WriteLine($"This job failed. Error Message : {message}");
+            Console.WriteLine($"This job failed validation. Error Message : {message}");
             ErrorMessage thisMessage = new ErrorMessage();
             thisMessage.TimeStamp = DateTime.Now.ToString();
             thisMessage.FileName = inputFile.Name;
@@ -73,7 +73,7 @@ namespace pdpditxx
 
         public static List<ErrorMessage> ScaleAndRotateErrorHandler(List<ErrorMessage> messageList, string pdfFile, string activeStep, string errorCode, string errorMessage, string stackTrace)
         {
-            Console.Error.WriteLine($"Error while splitting pdf : {pdfFile}.");
+            Console.Error.WriteLine($"Error while rotating pdf : {pdfFile}.");
 
             ErrorMessage thisMessage = new ErrorMessage();
             thisMessage.TimeStamp = DateTime.Now.ToString();
@@ -107,7 +107,7 @@ namespace pdpditxx
 
         public static List<ErrorMessage> TextConvertErrorHandler(List<ErrorMessage> messageList, string pdfFile, string activeStep, string errorCode, string errorMessage, string stackTrace)
         {
-            Console.Error.WriteLine($"Error while splitting pdf : {pdfFile}.");
+            Console.Error.WriteLine($"Error while converting to text : {pdfFile}.");
 
             ErrorMessage thisMessage = new ErrorMessage();
             thisMessage.TimeStamp = DateTime.Now.ToString();
