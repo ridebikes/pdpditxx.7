@@ -14,6 +14,7 @@ namespace pdpditxx
         public string StackTrace { get; set; }
         public string Module { get; set; }
 
+        // standard JSON return
         public static void ErrorListToJson(List<ErrorMessage> messageList, string jsonOutputFile)
         {
             using (StreamWriter jsonOut = File.CreateText(jsonOutputFile))
