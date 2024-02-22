@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace pdpditxx
@@ -13,7 +13,7 @@ namespace pdpditxx
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine($"Failure trying to cleanup. Message : {e.Message}  Stacktrace : {e.StackTrace}");
+                Console.Error.WriteLine($"Failure trying to cleanup temp files. Message : {e.Message}  Stacktrace : {e.StackTrace}");
                 Environment.Exit(1);
             }
         }
