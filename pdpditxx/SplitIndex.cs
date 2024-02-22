@@ -1,4 +1,3 @@
-﻿
 namespace pdpditxx
 {
     internal class SplitIndex
