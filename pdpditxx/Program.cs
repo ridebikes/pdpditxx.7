@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
@@ -15,7 +15,6 @@ namespace pdpditxx
             if (args.Length < 1)
             {
                 Console.Error.WriteLine("usage : <command> <arg1 input filename>");
-                // crash as this is a solfusion issue (need to pass the argument properly)
                 Environment.Exit(1);
             }
 
@@ -51,16 +50,6 @@ namespace pdpditxx
             // create appSettings class to put JSON config data into
             AppSettings.Root appSettings = new AppSettings.Root();
 
-            // Disabling Jon's checking thing 05/18/2022
-            // create action dicationary to compare to Powerstream call
-            // Choices are Concatenate, ScaleAndRotate, SmartSave, Split, TextConvert
-            //Dictionary<string, string> psActionDict = new Dictionary<string, string>();
-            //psActionDict.Add("Concatenate", "M1XX");
-            //psActionDict.Add("ScaleAndRotate", "MMXX");
-            //psActionDict.Add("SmartSave", "MMXX");
-            //psActionDict.Add("Split", "1MXX");
-            //psActionDict.Add("TextConvert", "MMXX");
-
             #endregion
 
             #region Make sure input file exists
@@ -68,7 +57,6 @@ namespace pdpditxx
             if (!inputFile.Exists)
             {
                 Console.Error.WriteLine("Input file does not exist");
-                // crash as this is a solfusion issue (file isn't there)
                 Environment.Exit(1);
             }
 
@@ -79,7 +67,7 @@ namespace pdpditxx
             try
             {
                 appSettings = ZipProcess.ProcessInputFile(appSettings, appConfigDir, zipWorkDir, inputFile);
-                // Console.WriteLine($"Notes : {appSettings.Notes}");
+                Console.WriteLine($"Notes : {appSettings.Notes}");
             }
             catch (Exception e)
             {
